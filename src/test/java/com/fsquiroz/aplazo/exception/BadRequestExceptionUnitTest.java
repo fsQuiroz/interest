@@ -18,6 +18,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class BadRequestExceptionUnitTest {
 
     @Test
+    public void buildByInvalidId() {
+        log.info("Test build BadRequestException by invalid id");
+
+        BadRequestException response = BadRequestException.byInvalidId();
+
+        assertThat(response)
+                .isNotNull()
+                .hasMessage("Invalid id value")
+                .hasFieldOrPropertyWithValue("meta", null);
+    }
+
+    @Test
     public void buildByMissingElement() {
         log.info("Test build BadRequestException by missing element");
 

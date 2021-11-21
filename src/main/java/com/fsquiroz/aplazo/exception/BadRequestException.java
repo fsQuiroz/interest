@@ -17,6 +17,10 @@ public class BadRequestException extends AppException {
         super(meta, message);
     }
 
+    public static BadRequestException byInvalidId() {
+        return new BadRequestException(null, "Invalid id value");
+    }
+
     public static BadRequestException byMissingElement(String element) {
         Assert.hasText(element, "'element' must not be empty");
         Map<String, Object> meta = new LinkedHashMap<>();
