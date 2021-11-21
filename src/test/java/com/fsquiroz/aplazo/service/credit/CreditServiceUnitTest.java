@@ -15,7 +15,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mockito;
-import org.mockito.internal.stubbing.answers.ReturnsArgumentAt;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.data.domain.Page;
@@ -23,7 +22,6 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.util.Assert;
 
 import java.math.BigDecimal;
 import java.time.Instant;
