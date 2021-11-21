@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 
 public interface ValidateService {
 
+    void isValidId(Long id);
+
     void isNotNull(Object o, String name);
 
     void isWithinRangeExclusive(BigDecimal floor, BigDecimal ceiling, BigDecimal value, String name);

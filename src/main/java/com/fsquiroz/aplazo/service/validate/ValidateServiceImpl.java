@@ -10,6 +10,13 @@ import java.math.BigDecimal;
 public class ValidateServiceImpl implements ValidateService {
 
     @Override
+    public void isValidId(Long id) {
+        if (id == null) {
+            throw BadRequestException.byInvalidId();
+        }
+    }
+
+    @Override
     public void isNotNull(Object o, String name) {
         Assert.hasText(name, "'name' must not be empty");
         if (o == null) {

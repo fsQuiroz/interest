@@ -24,6 +24,31 @@ public class ValidateServiceUnitTest {
     }
 
     @Test
+    public void valueIsValidId() {
+        log.info("Test value is valid id");
+
+        Long id = 1L;
+
+        Exception response = run(() -> service.isValidId(id));
+
+        assertThat(response)
+                .isNull();
+    }
+
+    @Test
+    public void valueIsInvalidId() {
+        log.info("Test value is invalid id");
+
+        Long id = null;
+
+        Exception response = run(() -> service.isValidId(id));
+
+        assertThat(response)
+                .isExactlyInstanceOf(BadRequestException.class)
+                .hasMessage("Invalid id value");
+    }
+
+    @Test
     public void objectIsNotNull() {
         log.info("Test object is not null");
 
