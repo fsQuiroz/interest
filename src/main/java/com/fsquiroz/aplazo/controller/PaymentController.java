@@ -68,7 +68,7 @@ public class PaymentController {
             @ApiResponse(code = 201, message = "Created", response = List.class),
             @ApiResponse(code = 400, message = "Bad Request", response = ExceptionDTO.class)
     })
-    public ResponseEntity<List<PaymentDTO>> calculate(CreditRequestDTO request) {
+    public ResponseEntity<List<PaymentDTO>> calculate(@RequestBody  CreditRequestDTO request) {
         List<Payment> payments = creditService.calculate(request);
         List<PaymentDTO> mapped = paymentMapper.map(payments);
         return new ResponseEntity<>(mapped, HttpStatus.CREATED);
