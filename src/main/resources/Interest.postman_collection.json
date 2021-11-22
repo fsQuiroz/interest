@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "a24d1d72-6f6e-4823-9e84-93b792094193",
+		"name": "Interest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Heatlh Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{interestHost}}/actuator/health",
+					"host": [
+						"{{interestHost}}"
+					],
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Credits",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{interestHost}}/credits?page={{defaultPageNumber}}&size={{defaultPageSize}}",
+					"host": [
+						"{{interestHost}}"
+					],
+					"path": [
+						"credits"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "{{defaultPageNumber}}",
+							"description": "Page number. Range from 0 to N"
+						},
+						{
+							"key": "size",
+							"value": "{{defaultPageSize}}",
+							"description": "Page size. Number of elements to be retrieved. Rage from 1 to N"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calculate Credit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 25000,\r\n    \"rate\": 2,\r\n    \"terms\": 52\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{interestHost}}/credits",
+					"host": [
+						"{{interestHost}}"
+					],
+					"path": [
+						"credits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Credit Payments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{interestHost}}/credits/:creditId/payments?page={{defaultPageNumber}}&size={{defaultPageSize}}",
+					"host": [
+						"{{interestHost}}"
+					],
+					"path": [
+						"credits",
+						":creditId",
+						"payments"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "{{defaultPageNumber}}",
+							"description": "Page number. Range from 0 to N"
+						},
+						{
+							"key": "size",
+							"value": "{{defaultPageSize}}",
+							"description": "Page size. Number of elements to be retrieved. Rage from 1 to N"
+						}
+					],
+					"variable": [
+						{
+							"key": "creditId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "interestHost",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "defaultPageNumber",
+			"value": "0"
+		},
+		{
+			"key": "defaultPageSize",
+			"value": "20"
+		}
+	]
+}
