@@ -29,7 +29,7 @@ bash build
 
 ### Run
 
-To run the project you can use the script `run` to start the docker image and expose the application on `http>//localhost:8080`:
+To run the project you can use the script `run` to start the docker image and expose the application on `http://localhost:8080`:
 ```
 bash build
 ```
