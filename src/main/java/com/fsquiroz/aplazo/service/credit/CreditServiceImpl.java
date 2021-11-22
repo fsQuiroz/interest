@@ -77,7 +77,7 @@ public class CreditServiceImpl implements CreditService {
         validate.isNotNull(request.getAmount(), "amount");
         validate.isNotNull(request.getRate(), "rate");
         validate.isNotNull(request.getTerms(), "terms");
-        validate.hasNoDecimals(request.getAmount(), "amount");
+        validate.hasNoDecimals(request.getRate(), "rate");
         validate.isWithinRangeInclusive(minAmount, maxAmount, request.getAmount(), "amount");
         validate.isWithinRangeExclusive(minRate, maxRate, request.getRate(), "rate");
         validate.isWithinRangeInclusive(minTerms, maxTerms, request.getTerms(), "terms");
