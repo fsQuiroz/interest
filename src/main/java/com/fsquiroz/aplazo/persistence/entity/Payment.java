@@ -24,6 +24,6 @@ public class Payment extends Entity {
 
     private Instant paymentDate;
 
-    @Column(scale = 3)
+    @Column(scale = 2)
     private BigDecimal amount;
 }
