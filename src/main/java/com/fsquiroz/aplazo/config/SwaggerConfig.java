@@ -21,7 +21,7 @@ public class SwaggerConfig {
     @Bean
     public Docket api() {
         if (docket == null) {
-            docket = new Docket(DocumentationType.OAS_30)
+            docket = new Docket(DocumentationType.SWAGGER_2)
                     .select()
                     .apis(RequestHandlerSelectors.basePackage("com.fsquiroz.aplazo"))
                     .build()
