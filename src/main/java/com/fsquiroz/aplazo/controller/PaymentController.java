@@ -44,13 +44,13 @@ public class PaymentController {
 
     @GetMapping
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "page", dataType = "int", paramType = "query",
+            @ApiImplicitParam(name = "page", dataTypeClass = Integer.class, paramType = "query",
                     value = "Page number. Range from 0 to N", example = "0")
             ,
-            @ApiImplicitParam(name = "size", dataType = "int", paramType = "query",
+            @ApiImplicitParam(name = "size", dataTypeClass = Integer.class, paramType = "query",
                     value = "Page size. Number of elements to be retrieved. Rage from 1 to N", example = "20")
             ,
-            @ApiImplicitParam(name = "sort", dataType = "string", paramType = "query",
+            @ApiImplicitParam(name = "sort", dataTypeClass = String.class, paramType = "query",
                     value = "Sort result. Order by property. Applicable to some first level properties. Ex: sort=name,desc")
     })
     @ApiResponses({
@@ -76,13 +76,13 @@ public class PaymentController {
 
     @GetMapping("/{creditId}/payments")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "page", dataType = "int", paramType = "query",
+            @ApiImplicitParam(name = "page", dataTypeClass = Integer.class, paramType = "query",
                     value = "Page number. Range from 0 to N", example = "0")
             ,
-            @ApiImplicitParam(name = "size", dataType = "int", paramType = "query",
+            @ApiImplicitParam(name = "size", dataTypeClass = Integer.class, paramType = "query",
                     value = "Page size. Number of elements to be retrieved. Rage from 1 to N", example = "20")
             ,
-            @ApiImplicitParam(name = "sort", dataType = "string", paramType = "query",
+            @ApiImplicitParam(name = "sort", dataTypeClass = String.class, paramType = "query",
                     value = "Sort result. Order by property. Applicable to some first level properties. Ex: sort=name,desc")
     })
     @ApiResponses({
