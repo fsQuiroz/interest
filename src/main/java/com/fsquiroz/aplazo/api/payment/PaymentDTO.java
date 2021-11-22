@@ -35,7 +35,7 @@ public class PaymentDTO {
     @ApiModelProperty(example = "1")
     private int paymentNumber;
 
-    @ApiModelProperty(example = "2021-12-01T00:00:00.000Z")
+    @ApiModelProperty(example = "2021-12-01T00:00:00.000")
     private Instant paymentDate;
 
     @ApiModelProperty(example = "549.99")

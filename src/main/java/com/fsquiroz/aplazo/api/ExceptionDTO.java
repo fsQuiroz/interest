@@ -15,7 +15,7 @@ import java.util.Map;
 @ApiModel(value = "Error")
 public class ExceptionDTO {
 
-    @ApiModelProperty(example = "2019-01-25T12:57:01.999Z")
+    @ApiModelProperty(example = "2019-01-25T12:57:01.999")
     private Instant timestamp;
 
     @ApiModelProperty(example = "404")
