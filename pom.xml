@@ -11,6 +11,7 @@
 	<groupId>com.fsquiroz</groupId>
 	<artifactId>aplazo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>Interest</name>
 	<description>Simple Interest Service</description>
 	<properties>
@@ -64,6 +65,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>interest</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
