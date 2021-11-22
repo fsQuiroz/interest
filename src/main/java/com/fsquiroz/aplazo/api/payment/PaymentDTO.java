@@ -1,6 +1,5 @@
 package com.fsquiroz.aplazo.api.payment;
 
-import com.fsquiroz.aplazo.api.credit.CreditDTO;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -29,8 +28,6 @@ public class PaymentDTO {
 
     @ApiModelProperty(hidden = true)
     private Instant deleted;
-
-    private CreditDTO credit;
 
     @ApiModelProperty(example = "1")
     private int paymentNumber;

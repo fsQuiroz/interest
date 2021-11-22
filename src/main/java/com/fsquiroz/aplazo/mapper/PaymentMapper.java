@@ -7,12 +7,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class PaymentMapper extends Mapper<Payment, PaymentDTO> {
 
-    private CreditMapper creditMapper;
-
-    public PaymentMapper(CreditMapper creditMapper) {
-        this.creditMapper = creditMapper;
-    }
-
     @Override
     public PaymentDTO map(Payment e) {
         return e == null ? null : PaymentDTO.builder()
@@ -20,7 +14,6 @@ public class PaymentMapper extends Mapper<Payment, PaymentDTO> {
                 .created(e.getCreated())
                 .updated(e.getUpdated())
                 .deleted(e.getDeleted())
-                .credit(creditMapper.map(e.getCredit()))
                 .paymentNumber(e.getPaymentNumber())
                 .paymentDate(e.getPaymentDate())
                 .amount(e.getAmount())
